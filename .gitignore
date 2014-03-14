@@ -16,5 +16,4 @@ dojo/
 # Ignore blank.html used for Dojo
 src/css
 src/blank.html
-src/index.html
 src/js/gather-it.js

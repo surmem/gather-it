@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dijit/themes/nihilo/nihilo.css">
+  <link rel="stylesheet" type="text/css" href="./css/gather-it.css"/>
+  <script type="text/javascript" src="./js/gather-it.js"></script>
+  <style>
+    body {
+      line-height: 1.5em;
+    }
+
+    .dijitTooltipContainer {
+      border: none;
+      background: transparent;
+    }
+  </style>
+</head>
+<div id="article" style="visibility:hidden;">
+  <p>This is some example text and a [card]Surreal Memoir[/card]. Other cards include [card]Gitaxian Probe[/card] and
+    [card]Pristine Angel[/card].</p>
+  <p>Some other text with [card]Ajani Vengeant[/card].</p>
+  <div>
+    <div>
+      <span>[card]Planar Portal[/card], [card]Defense Grid[/card]</span>, and [card]Eternal Dragon[/card]
+    </div>
+    <strong>[card]Jace, the Mind Sculptor[/card]</strong>
+    <p>
+      The following example shouldn't work because the [card][/card] tag crosses the boundaries between nodes:
+      <blockquote><em>[card]Netter</em> il-Dal[/card]</blockquote>
+    </p>
+  </div>
+  More plain text nodes with [card]Bloodbraid Elf[/card], <em>[card]Wall of Denial[/card]</em>, [card]Tromokratis[/card], [card]Path to Exile[/card], and [card]Akroma, Angel of Wrath[/card].
+</div>
+<body>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js"
+        data-dojo-config="
+            async: true,
+            parseOnLoad: true,
+            dojoBlankHtmlUrl: './blank.html',
+            packages: [{
+              name: 'gather-it',
+              location: location.pathname.replace(/\/[^/]+$/, '')+'/js/cards'
+            }]
+          "></script>
+<script type="text/javascript" src="./js/gather-it.js"></script>
+<script>
+  require(["dojo/dom", "dojo/ready", "cards/mtg/GatherIt"], function(dom, ready, GatherIt) {
+    ready(function() {
+      var start = (new Date()).getTime(),
+          end;
+      (new GatherIt({showNodeAfterParse: true})).parse(dom.byId("article"));
+      end = (new Date()).getTime();
+      console.log("gather-it parse time: " + (end - start) + " ms");
+    });
+  });
+</script>
+</body>
+</html>
