@@ -4,7 +4,6 @@
   <title></title>
   <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dijit/themes/nihilo/nihilo.css">
   <link rel="stylesheet" type="text/css" href="./css/gather-it.css"/>
-  <script type="text/javascript" src="./js/gather-it.js"></script>
   <style>
     body {
       line-height: 1.5em;
@@ -39,11 +38,7 @@
         data-dojo-config="
             async: true,
             parseOnLoad: true,
-            dojoBlankHtmlUrl: './blank.html',
-            packages: [{
-              name: 'gather-it',
-              location: location.pathname.replace(/\/[^/]+$/, '')+'/js/cards'
-            }]
+            dojoBlankHtmlUrl: './blank.html'
           "></script>
 <script type="text/javascript" src="./js/gather-it.js"></script>
 <script>
