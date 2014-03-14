@@ -1,0 +1,20 @@
+{
+  "name": "gather-it",
+  "version": "0.1",
+  "keywords": ["JavaScript", "Dojo"],
+  "maintainers": [{
+    "name": "Blake Stearman"
+  }],
+  "contributors": [{
+    "name": "Blake Stearman"
+  }],
+  "dependencies": {
+    "dojo": "~1.9.2",
+    "dijit": "~1.9.2"
+  },
+  "directories": {
+    "lib": "."
+  },
+  "main": "main",
+  "dojoBuild": "gather-it.profile.js"
+}

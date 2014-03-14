@@ -1,0 +1,20 @@
+# Ignore temporary files and index files.
+.DS_Store
+*~
+
+# Ignore common IDE project files
+.project
+.settings/
+.idea/
+
+# Ignore build-output directory
+build-output/
+
+# Ignore Dojo source used for build
+dojo/
+
+# Ignore blank.html used for Dojo
+src/css
+src/blank.html
+src/index.html
+src/js/gather-it.js
